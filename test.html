@@ -1,0 +1,130 @@
+<html>
+
+  <head>
+    <style>
+      form {
+
+	width: 80%;
+	margin: 0 auto;
+
+}
+.box {
+	border: solid 1px blue;
+	margin: 10px;
+	padding-left: 10px;
+
+}
+table {
+	width: 90%;
+
+}</style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend> Details Form </legend>
+        <table>
+          <tr>
+            <td colspan="2">
+              <label for="f-title">Title</label> <br />
+              <input type="text" id="f-title" size="90"/>
+  				</td>
+          </tr>
+          <tr>
+
+            <td colspan="2">
+              <label for="f-descp">Description</label> <br />
+              <textarea id="f-descp" rows="5" cols="80" placeholder="Enter your comments"></textarea>
+            </td>
+          </tr><!-- end of description -->
+          <tr>
+            <td>
+              <p>
+                Continent <br />
+                <select id="continents">
+  					<option> Choose continent </option>
+  					<option> Africa </option>
+  					<option> Europe </option>
+  				</select>
+              </p>
+              <p>
+                Country <br />
+                <select id="countries">
+  					<option> Choose country </option>
+  					<option> USA </option>
+  					<option> France </option>
+  				</select>
+              </p>
+              <p>
+                City <br />
+                <input type="text" list="cities" />
+                <datalist id="cities">
+  						<option> Paris </option>
+  						<option> New York</option>
+  						<option> Los Angeles </option>
+
+  					</datalist>
+              </p>
+            </td>
+            <td>
+              <div class="box">
+                <p> Copyrights?<br />
+                  <input type="radio" name="cr" />All rights reserved<br />
+                  <input type="radio" name="cr" />Creative Commons<br />
+                                          </p>
+              </div>
+              <div class="box">
+                <p> Creative Commons Types<br />
+                  <input type="checkbox" name="cct" value="1"/>Attribution <br />
+                  <input type="checkbox" name="cct" value="2"/>Attribution2<br />
+                  <input type="checkbox" name="cct" value="3"/>Attribution 3<br />
+                  <input type="checkbox" name="cct" value="4"/>Attribution 4<br />
+                                          </p>
+              </div>
+            </td>
+          </tr><!-- end of continent & -->
+          <tr>
+            <td colspan="2">
+
+
+              <div class="box">
+                I accept the software license. <input type="checkbox" />
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>
+                Rate this photo: <br />
+                <input type="text" />
+              </p>
+                <p>
+                  Color Collection <br />
+                  <input type="color" />
+                </p>
+
+            </td>
+            <td>
+              <div class="box">
+
+                <p>
+                  Date Taken:<br /><input type="date" />
+</p>
+                  <p>
+                    Time Taken:<br /><input type="time" />
+</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+        </table>
+        </fiedlset>
+    </form>
+
+  </body>
+
+</html>
