@@ -31,7 +31,7 @@ html{
   padding-right:5pt;
   background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0),#222);
   text-align: right;
-  font-size: 15pt;
+  font-size: 19pt;
 border-bottom: 2px solid #888;
 }
 
@@ -44,7 +44,7 @@ border-bottom: 2px solid #888;
 #navbar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 17pt;
     color: #717171;
     display: block;
 }
