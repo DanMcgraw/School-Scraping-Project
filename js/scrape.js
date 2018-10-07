@@ -9,9 +9,19 @@ $(document).ready(function(){
 
         var sevenfifty = $(textfileContent).find("#resultsTable");
         var colnum = sevenfifty.closest("td").prevAll("td").length;
+        var diva = $("<div id=\"RoomsAndTimes\">");
+        sevenfifty.closest("table").find("thead").remove();
+        $(sevenfifty).find('tr').each(function() {
+    var $tds = $(this).children(),
+        $row = $("<tr></tr>");
+    $row.append($tds.eq(7)).append($tds.eq(8)).append($tds.eq(13)).appendTo(diva);
+});
+        $(diva).find('img').each(function(){
 
-        sevenfifty.closest("table").find("tr").find("td:eq(" + colnum+11 + ")").remove();
+                    var str = jQuery(this).attr('alt'),
+                    strResult = str.slice(61,65);
+                    jQuery(this).replaceWith(strResult);
 
-
-body.innerHTML+=sevenfifty.text();
+                 });
+$(body).after(diva);
 });
