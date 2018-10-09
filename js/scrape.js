@@ -14,7 +14,6 @@ $(document).ready(function(){
         $(sevenfifty).find('tr').each(function() {
     var $tds = $(this).children(),
         $row = $("<tr></tr>");
-        $tds.
     $row.append($tds.eq(7)).append($tds.eq(8)).append($tds.eq(13)).appendTo(diva);
 });
         $(diva).find('img').each(function(){
