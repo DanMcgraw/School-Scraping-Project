@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- CSCI 2005 Team Project - Daniel McGraw and Ryan Ward-->
+<head>
+	<meta charset="UTF-8">
+	<title>FURF - Facilities Use Request Form</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<h3>Century College</h3>
+<h2>Facilities Use Request Form (FURF)</h2>
+<br>
+
+<p>* Step One: email <a href="mailto:roomrequests@century.edu">roomrequests@century.edu</a> with the room, date and time of the event.  The Room Scheduler may request more information.  Send form, if possible, 1 month in advance of the event. An inquiry about whether a space is available is not a reservation.  You will receive an email either confirming or denying the request.</p>
+<p>* Step Two: If the room is confirmed, complete Facilities Use Request Form (below).  Be sure to note in the form any AV, Facilities Services & Campus Security needs.</p>
+
+<form action="#" method="get">
+
+<table>
+  <tbody id="section1">
+    <tr class="grouplabel">
+      <th colspan=3 align="left">EVENT DETAILS</th>
+    </tr>
+    <tr>
+      <td colspan=2>
+      Day/Date of event:<br>
+      <input type="text" name="eventDate">
+      </td>
+      <td>
+      Campus & Room #:<br>
+      <input type="text" name="eventLocation">
+      </td>
+    </tr>
+    <tr>
+      <td>
+      Event name:<br>
+      <input type="text" name="eventName">
+      </td>
+      <td>
+      For purpose of (type of meeting or event):<br>
+      <input list="eventPurpose" name="eventPurpose">
+         <datalist id="eventPurpose">
+           <option value="Conference"></option>
+           <option value="Course, Hybrid Non-Credit"></option>
+           <option value="Course, Non-Credit"></option>
+           <option value="Meeting"></option>
+           <option value="Prof. Development/Training"></option>
+           <option value="Recruitment/Retention"></option>
+           <option value="Special Event"></option>
+         </datalist>
+      </td>
+      <td>
+      Event size/number of attendees:<br>
+      <input type="text" name="eventAttendeeCount">
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+      Permission requested by (name of organization/department and contact person):<br>
+      <input type="text" name="permissionRequestor">
+      </td>
+      <td>
+      Phone/Cell (daytime/evening):<br>
+      <input type="text" name="permissionRequestorPhone">
+      </td>
+    </tr>
+    <tr>
+      <td colspan=2>
+      Must have an on-site employee contact:<br>
+      <input type="text" name="employeeContact">
+      </td>
+      <td>
+      Phone/Cell (daytime/evening):<br>
+      <input type="text" name="employeeContactPhone">
+      </td>
+    </tr>
+  </tbody>
+
+  <tbody id="section2">
+    <tr class="grouplabel">
+      <th colspan=3 align="left">FACILITIES INFORMATION</th>
+    </tr>
+      <tr>
+      <td colspan=3>
+      Please complete the following equipment, facilities services, security and/or theatre needs.  Be specific by attaching plans/<a href="#">maps</a> for special set-ups<br>
+	  Click here to choose set-up
+      <input list="setupOptions" name="setupOptions">
+         <datalist id="setupOptions">
+           <option value="Lincoln Mall #1 center podium/tables"></option>
+           <option value="Lincoln Mall #2 center podium/chairs"></option>
+           <option value="Lincoln Mall #3 center stage/tables"></option>
+           <option value="Lincoln Mall #4 center stage/chairs"></option>
+           <option value="Other (please email special map to roomrequests)"></option>
+         </datalist>
+      </td>
+    </tr>
+    <tr>
+      <td colspan=3>
+      Facilities Services - include stage, room setups, tables/chairs, electricity needed, extra cleaning, etc. (include map)<br>
+      <input type="text" name="facilitiesServices">
+      </td>
+     </tr>
+     <tr>
+      <td colspan=3>
+      A-V Equipment (Audio Visual--podium, microphone, sound system, projector, etc.):<br>
+      <input type="text" name="avEquipment">
+      </td>
+    </tr>
+    <tr>
+      <td colspan=3>
+      Theatre - <br>
+      <input type="radio" name="theatreOption" value="specialtyLighting">Specialty lighting required
+      <input type="radio" name="theatreOption" value="publicEvent">Open to public
+      <input type="radio" name="theatreOption" value="collegeEvent">College Event Only<br>
+	  Other<input type="text" name="theatreOtherText">
+      </td>
+    </tr>
+	<tr>
+      <td>
+      Public Safety:<br>
+      <input type="text" name="publicSafety">
+      </td>
+      <td>
+      Doors Unlocked By (date/time):<br>
+      <input type="text" name="doorsUnlockedTime">
+      </td>
+	  <td>
+      Doors Locked By (date/time):<br>
+      <input type="text" name="doorsLockedTime">
+      </td>
+    </tr>
+	<tr>
+      <td colspan=3>
+      Events Services: (Event Equipment-Supplies Available @ J:\2010 CENTURY COMMONS NEW\Events)<br>
+      <input type="text" name="publicSafety">
+      </td>
+    </tr>
+	<tr>
+      <td colspan=3>
+      Weekend Use Requested (Fridays after 4:00pm./Saturdays/Sundays):<br>
+      <input type="text" name="weekendUseRequested">
+      </td>
+    </tr>
+  </tbody>
+
+</table>
+  <input type="submit" value="Submit">
+</form>
+
+<p>For event questions, contact Events Coordinator, 651-773-1792 or 651-779-5531</p>
+<p>To change facilities needs after submittal, contact Facilities West Campus 651-285-6094 or Ext. 4531<br>East Campus 651-796-8440 or Ext. 4532</p>
+</body>
+</html>
