@@ -10,5 +10,5 @@ body.innerHTML += textfileContent;
 var t = $("#content").children("p").text().trimStart();
 var size = t.match( /[^\.!\?]+[\.!\?]+/g )[0].length.valueOf();
 
-$("#content").children("p").html("<strong>" +t.match( /[^\.!\?]+[\.!\?]+/g )[0]+"</strong>"+ t.substring(size,t.length));
+$("#content").children("p")[0].html("<strong>" +t.match( /[^\.!\?]+[\.!\?]+/g )[0]+"</strong>"+ t.substring(size,t.length));
 });
