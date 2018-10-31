@@ -1,39 +1,32 @@
-html, body, header, footer, hgroup, nav, article, section, figure, figcaption, ul, li, body, div, p, img
-{
-   margin: 0;
-   padding: 0;
-   font-size: 100%;
-   border: 0;
-}
-h1, h2, h3
+#content h1, h2, h3
 {
    text-align: center;
    margin: 0;
    padding: 0;
    border: 0;
 }
-caption
+#content caption
 {
-	background-color:#7ca59a;
+	background-color:#444;
 	font-weight: bold;
 	height: 35px;
 	line-height: 2.5;
 }
-table
+#content table
 {
 
 	font-size: smaller;
 	border-spacing: 3px;
 }
-th
+#content th
 {
 	text-align:center;
-	background-color:#edede8;
+	background-color:#111;
 	height: 20px;
 	color: #4f5359;
 	border-bottom: 1px solid #b5becc;
 }
-td
+#content td
 {
 	border-color: white;
 	height: 30px;
@@ -42,11 +35,19 @@ td
 	border-bottom: 1px solid #b5becc;
 	border-right: 1px solid #b5becc;
 }
-a
-{
-	color: #006699;
+#content a {
+   padding: 6px 8px 6px 16px;
+   text-decoration: none;
+   font-size: 17pt;
+   color: #717171;
+   display: block;
 }
-form
+
+/* When you mouse over the navigation links, change their color */
+#content a:hover {
+   color: #f1f1f1;
+}
+#content form
 {
 	font-weight: bold;
 	width: 700px;
