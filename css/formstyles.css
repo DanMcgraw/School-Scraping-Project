@@ -1,0 +1,54 @@
+html, body, header, footer, hgroup, nav, article, section, figure, figcaption, ul, li, body, div, p, img
+{
+   margin: 0;
+   padding: 0;
+   font-size: 100%;
+   border: 0;
+}
+h1, h2, h3
+{
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+caption
+{
+	background-color:#7ca59a;
+	font-weight: bold;
+	height: 35px;
+	line-height: 2.5;
+}
+table
+{
+
+	font-size: smaller;
+	border-spacing: 3px;
+}
+th
+{
+	text-align:center;
+	background-color:#edede8;
+	height: 20px;
+	color: #4f5359;
+	border-bottom: 1px solid #b5becc;
+}
+td
+{
+	border-color: white;
+	height: 30px;
+	font-weight: bold;
+	color: #4f5359;
+	border-bottom: 1px solid #b5becc;
+	border-right: 1px solid #b5becc;
+}
+a
+{
+	color: #006699;
+}
+form
+{
+	font-weight: bold;
+	width: 700px;
+	line-height: 1.5;
+}
