@@ -36,6 +36,6 @@ $(document).ready(function() {
 
 
    }
-
+   //   sessionStorage.setItem('user', JSON.stringify(diva));
    $(body).after(diva);
 });
