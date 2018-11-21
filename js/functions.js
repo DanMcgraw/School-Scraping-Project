@@ -1,21 +1,39 @@
 function rowToNodeSet(row) {
-
+   return row.cells[0].getElementsByTagName('div').length;
 }
+
+
 
 function timeConverter(input) {
    input = input.replace(/\:/g, '');
    var times = input.split("-");
    var timeInt = 0;
    for (var i = 0; i < times.length; i++) {
-      alert(parseInt(times[i], 10));
       if (times[i].includes("pm"))
-         timeInt += (parseInt(times[i], 10) * ((i * 9999) + 1)) + 1200;
+         timeInt += ((parseInt(times[i], 10) + 1200) * ((i * 9999) + 1));
       else {
          timeInt += (parseInt(times[i], 10) * ((i * 9999) + 1));
       }
    }
 
    return timeInt;
+}
+
+function timeEpoch8(input) {
+   var times = [];
+   if (String(input).length < 8) {
+      var timeString = "0" + input;
+   } else {
+      var timeString = "" + input;
+   }
+   times[0] = timeString.substring(4, 8);
+   times[1] = timeString.substring(0, 4);
+   return times;
+}
+
+function overlapTest(input) {
+   //input is array of 4 numbers, event start, event end, class start, class end
+   return (((input[0] < input[2]) && (input[1] < input[2])) || ((input[0] > input[3]) && (input[1] > input[3])));
 }
 
 function daysOfWeek(input) {
@@ -59,6 +77,16 @@ function daysOfWeek(input) {
       if (input.includes("Thursday")) output += 8;
       if (input.includes("Friday")) output += 16;
       return output;
+   }
+}
+
+class Room {
+   constructor(number, classes, x, y, onOff) {
+      this.number = number;
+      this.classes = classes;
+      this.x = x;
+      this.y = y;
+      this.onOff = onOff;
    }
 }
 

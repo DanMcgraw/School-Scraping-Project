@@ -4,6 +4,8 @@ $(document).ready(function() {
    var output = document.getElementById('output');
 
    function testFunction() {
-      output.innerHTML = timeConverter(inputBox.value);
+      output.innerHTML = timeEpoch8(timeConverter(inputBox.value));
+      output.innerHTML += "<br />";
+      output.innerHTML += timeConverter(inputBox.value);
    }
 });

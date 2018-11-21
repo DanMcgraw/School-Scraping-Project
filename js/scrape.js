@@ -36,6 +36,7 @@ $(document).ready(function() {
 
 
    }
+   alert(rowToNodeSet(diva.rows[4]));
    //   sessionStorage.setItem('user', JSON.stringify(diva));
    $(body).after(diva);
 });
