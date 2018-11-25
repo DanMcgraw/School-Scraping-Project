@@ -9,9 +9,25 @@ roomsArray.push(new Room(3160, 0, 260, 475, true));
 roomsArray.push(new Room(3150, 0, 375, 475, true));
 
 function mapRooms() {
+  var rooms = document.querySelectorAll("div[class^='room_']");
+  var inputBox = document.getElementById('input');
+
+  if(rooms.length){
+    //Rooms have been placed, just need to be updated
+
+    for(var i = 0; i<rooms.length;i++){
+    if(rooms[i].className.substring(5,9)==inputBox.value)
+    rooms[i].childNodes[0].src = "images/Red_Oval.png";
+    else{
+      rooms[i].childNodes[0].src = "images/Green_Oval.png";
+    }
+  }
+  }else{
+    //rooms need to be placed
    roomsArray.forEach(function(element) {
       insertRoom(element);
    });
+ }
 }
 
 function insertRoom(room) {
@@ -37,7 +53,7 @@ function insertRoom(room) {
    $(roomDiv).get(0).style.position = "absolute";
    $(roomDiv).get(0).style.top = room.y.toString() + "px";
    $(roomDiv).get(0).style.left = room.x.toString() + "px";
-   roomDiv.className = "rooom_" + room.number;
+   roomDiv.className = "room_" + room.number;
    $('#highlighted_map').append(roomDiv);
 }
 

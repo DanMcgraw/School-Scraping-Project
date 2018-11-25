@@ -105,8 +105,8 @@ function timeEpoch8(input) {
   } else {
     var timeString = "" + input;
   }
-  times[0] = timeString.substring(4, 8);
-  times[1] = timeString.substring(0, 4);
+  times[0] = parseInt(timeString.substring(4, 8));
+  times[1] = parseInt(timeString.substring(0, 4));
   return times;
 }
 
