@@ -38,3 +38,20 @@ function scrape(url){
   var table = convertTable(diva);
   return table;
 }
+
+function scrapeSubjects(){
+  var optionss = new XMLHttpRequest();
+  //options.open('GET', 'https://cors-anywhere.herokuapp.com/https://eservices.minnstate.edu/registration/search/advancedSubmit.html?campusid=304&searchrcid=0304&searchcampusid=304&yrtr=20193&subject=&courseNumber=&courseId=&openValue=OPEN_PLUS_WAITLIST&delivery=ALL&showAdvanced=true&mon=on&tue=on&wed=on&thu=on&fri=on&sat=on&sun=on&starttime=0600&endtime=2300&mntransfer=&credittype=ALL&credits=&instructor=&keyword=&begindate=&site=0304&resultNumber=250', false);
+  optionss.open('GET', 'https://cors-anywhere.herokuapp.com/https://eservices.minnstate.edu/registration/search/advanced.html?campusid=304', false);
+  optionss.send();
+  var textfileContents = optionss.responseText;
+  //var elements = $("div").html(textfileContent)[0];
+
+  var twelve = $(textfileContents).find("#subject")[0].textContent;
+  var rex = /\(([^()]*)\)/g;
+  var subjects=[], m;
+  while(m=rex.exec(twelve)) {
+    subjects.push(m[1]);
+  }
+  return subjects;
+}

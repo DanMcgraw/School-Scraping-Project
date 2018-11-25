@@ -17,6 +17,7 @@ function convertTable(raw) {
 }
 
 function pullData(subject) {
+  writeToLoader(subject);
   var scrapeData = scrape("https://eservices.minnstate.edu/registration/search/advancedSubmit.html?campusid=304&searchrcid=0304&searchcampusid=304&yrtr=20193&subject=" + subject + "&courseNumber=&courseId=&openValue=OPEN_PLUS_WAITLIST&delivery=ALL&showAdvanced=true&mon=on&tue=on&wed=on&thu=on&fri=on&sat=on&sun=on&starttime=0600&endtime=2300&mntransfer=&credittype=ALL&credits=&instructor=&keyword=&begindate=&site=0304&resultNumber=250");
   return scrapeData;
 }
@@ -45,19 +46,22 @@ function stripNonRooms(raw, rooms) {
 
   function generateTable() {
     if (localStorage.getItem("data") === null) {
+      $(window).bind("load", function() {
+        var preArray = new Array();
+        var subjects = scrapeSubjects();
+        for(var i = 0; i<subjects.length; i++)
+        $(window).bind("load", function() {preArray = preArray.concat(pullData(subjects[i]));});
+        var array = stripNonRooms(preArray, roomsArray);
+        localStorage.setItem('data', JSON.stringify(array));
+      });
 
-      var preArray = new Array();
-      preArray = preArray.concat(pullData("CSCI"));
-      preArray = preArray.concat(pullData("ART"));
-      preArray = preArray.concat(pullData("ACCT"));
-      preArray = preArray.concat(pullData("BMGT"));
-      preArray = preArray.concat(pullData("CAPL"));
-      preArray = preArray.concat(pullData("CVF"));
-      var array = stripNonRooms(preArray, roomsArray);
-      localStorage.setItem('data', JSON.stringify(array));
     } else {
       var array = JSON.parse(localStorage.getItem('data'));
     }
+    var loader = document.getElementById("loader");
+    $(window).bind("load", function() {
+    loader.style.display = "none";
+  });
 
     return array;
   }
@@ -136,6 +140,24 @@ function stripNonRooms(raw, rooms) {
       if (input.includes("Friday")) output += 16;
       return output;
     }
+  }
+
+  function writeToLoader(string){
+    var loaderList = document.getElementById("loader").getElementsByTagName("ul")[0];
+    var item = document.createElement('li');
+    item.appendChild(document.createTextNode("Now Scraping "+string+" Classes"));
+    loaderList.appendChild(item);
+  }
+
+  function showLoader(){
+    var body = document.getElementsByTagName("BODY")[0];
+    var request = new XMLHttpRequest();
+    request.open('GET', 'js/loader.html', false);
+    request.send();
+    var textfileContent = request.responseText;
+body.innerHTML += textfileContent;
+var loader = document.getElementById("loader");
+
   }
 
   class Room {

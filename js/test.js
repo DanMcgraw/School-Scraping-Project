@@ -2,6 +2,8 @@ $(document).ready(function() {
    var inputBox = document.getElementById('input');
    inputBox.addEventListener("keyup", testFunction);
    var output = document.getElementById('output');
+   showLoader();
+
    var table = generateTable();
 
    function testFunction() {
