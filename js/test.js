@@ -1,18 +1,29 @@
 $(document).ready(function() {
-   var inputBox = document.getElementById('input');
-   inputBox.addEventListener("keyup", testFunction);
-   var output = document.getElementById('output');
-   showLoader();
+  var inputBox = document.getElementById('input');
+  inputBox.addEventListener("keyup", testFunction);
+  var output = document.getElementById('output');
+  var table;
 
-   var table = generateTable();
+    table = generateTable()
+.then(function(resolve)
+{
+    var array = stripNonRooms(resolve.a, roomsArray);
+    localStorage.setItem('data', JSON.stringify(array));
+    //hides the loader when it is complete
+    var loader = document.getElementById("loader");
+    loader.style.display = "none";
 
-   function testFunction() {
-      output.innerHTML = timeEpoch8(timeConverter(inputBox.value));
-      output.innerHTML += "<br />";
-      output.innerHTML += timeConverter(inputBox.value);
-      output.innerHTML += "<br />";
-      output.innerHTML += daysOfWeek(inputBox.value);
-      output.innerHTML += "<br />";
-      output.innerHTML += JSON.stringify(table[4]);
-   }
+    return array;
+})
+
+
+  function testFunction() {
+    output.innerHTML = timeEpoch8(timeConverter(inputBox.value));
+    output.innerHTML += "<br />";
+    output.innerHTML += timeConverter(inputBox.value);
+    output.innerHTML += "<br />";
+    output.innerHTML += daysOfWeek(inputBox.value);
+    output.innerHTML += "<br />";
+    output.innerHTML += JSON.stringify(table[4]);
+  }
 });
