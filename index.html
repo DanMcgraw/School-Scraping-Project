@@ -11,7 +11,16 @@
   </head>
 
   <body>
-    This is a test. How many sentences? Good question. this. is a sentence. no it was not.
+    For this project we have focused our attention to the scraping capabilities and exploits of javascript. This involves requesting foreign sites data to be pulled, stripped, examined, and formulated into a data structure that is native to our
+    application.
+    <br />
+    In process, from start to finish for our computer lab requester, we strip all 687 courses from <a href="https://eservices.minnstate.edu/registration/search/basic.html?campusid=304">This Site</a>, by searching through the GET request protocol
+    that utilizes excess variables passed through the browsers URL. For this, we first retrieve the selection of 82 course subjects from the search page, convert the subjects list to an array of 82, 3 to 4 digit strings, and then use that in our
+    custom request to retrieve the courses. We scrape the schools search site a total of 83 times per request. This successfully pulls 687 unique courses from the search, then we format the html from the tables of results into something more clean,
+    since some classes meet on different times, this increases the rows to 951. This rows are then converted into custom javascript class objects called "Nodes", which store very simple data. We convert the strings for start times and end times to
+    an 8 digit integer, the days of the week of Monday-Friday to binary so it is an integer between 1-31, and the room number is simply a 4 digit integer. After converting the table to a list of 952 Nodes, we run the table through a filter, only
+    allowing class sessions that match our select rooms, which are the 8 computer lab rooms, of which we are right now in room 3110 for this course. This brings the list from 952, to 39. These 39 rooms are stored in the browsers memory for the rest
+    of the application.
   </body>
 
 </html>
