@@ -86,6 +86,13 @@ border-bottom: 2px solid #888;
   color: #777;
 }
 
+#content br{
+  display: block;
+  margin-top: 12pt;
+  line-height: 20pt;
+  content: " ";
+}
+
 #loader {
   display: block;
   position: absolute;
