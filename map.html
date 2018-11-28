@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 	<!-- Visual Map Century College Computer Lab Map -->
-
 	<head>
 		<meta charset="UTF-8">
+		<meta name="title" content="Request Room"/>
 		<title>Computer Lab Map</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="js/script.js"></script>
 		<script src="js/functions.js"></script>
 		<script src="js/map.js"></script>
 		<script>
-			$(document).ready(function() {
+			$(document).ready(function () {
 				mapRooms();
 				var inputBox = document.getElementById('input');
-			  inputBox.addEventListener("keyup", mapRooms);
+				inputBox.addEventListener("keyup", mapRooms);
 			});
-
 		</script>
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-
 	<body>
 		<input type='text' id='input'>
 		<div id="highlighted_map" style="position:relative;">
 			<div class="map"><img src="data/Map.svg" alt="..."></div>
 		</div>
 	</body>
-
 </html>

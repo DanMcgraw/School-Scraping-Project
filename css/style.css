@@ -2,113 +2,124 @@
 CSS Example created by Daniel McGraw
 For educative purposes only
 */
-
-html{
-  background-image:linear-gradient(to bottom right, #222, #000);
-  background-attachment: fixed;
+html {
+   background-image: linear-gradient(to bottom right, #222, #000);
+   background-attachment: fixed;
 }
 
 #navbar {
-    /*height: 70%;*/ /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 5px;
-    padding-left: 5px;
-    color: #a1a1a1;
-    overflow: visible;
+   /*height: 70%;*/
+   /* Full-height: remove this if you want "auto" height */
+   width: 240px;
+   /* Set the width of the sidebar */
+   position: fixed;
+   /* Fixed Sidebar (stay in place on scroll) */
+   z-index: 1;
+   /* Stay on top */
+   top: 0;
+   /* Stay at the top */
+   left: 0;
+   background-color: #111;
+   /* Black */
+   overflow-x: hidden;
+   /* Disable horizontal scroll */
+   padding-top: 5px;
+   padding-left: 10px;
+   color: #a1a1a1;
+   overflow: visible;
 }
 
 #navbar h4 {
-  margin-bottom: 5pt;
-  margin-top: 5pt;
-  margin-left: 30pt;
-  margin-right: -20pt;
-  padding-right:5pt;
-  background-image:linear-gradient(to bottom,rgba(0, 0, 0, 0),#222);
-  text-align: right;
-  font-size: 19pt;
-border-bottom: 2px solid #888;
+   margin-bottom: 5pt;
+   margin-top: 5pt;
+   margin-left: 30pt;
+   margin-right: -20pt;
+   padding-right: 5pt;
+   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #222);
+   text-align: right;
+   font-size: 15pt;
+   border-bottom: 2px solid #888;
 }
 
 #navbar ul {
-  list-style-type:none;
-  padding-left: 10px;
+   list-style-type: none;
+   padding-left: 5px;
+   margin-left: 5px;
 }
 
 /* The navigation menu links */
 #navbar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 17pt;
-    color: #717171;
-    display: block;
+   padding: 6px 8px 6px 0px;
+   text-decoration: none;
+   font-size: 13pt;
+   color: #717171;
+   display: inline-block;
 }
 
 /* When you mouse over the navigation links, change their color */
 #navbar a:hover {
-    color: #f1f1f1;
+   color: #f1f1f1;
 }
 
 /* Style page content */
 #content {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    width: 60%;
-    background-color: #222;
-    color: #888;
-    font-weight: 300;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 20px;
+   width: 60%;
+   background-color: #222;
+   color: #888;
+   font-weight: 300;
 }
 
 #content p {
-  color: #888;
-  font-size: 18pt;
-  font-weight: 300;
-  margin-left: 40pt;
-  margin-right: 40pt;
-  text-align: justify;
-
+   color: #888;
+   font-size: 18pt;
+   font-weight: 300;
+   margin-left: 40pt;
+   margin-right: 40pt;
+   text-align: justify;
 }
 
 #content p strong {
-  font-size: 20pt;
-  display:inline-block;
-  text-align: left;
+   font-size: 20pt;
+   display: inline-block;
+   text-align: left;
 }
 
-#content figure{
-  text-align: center;
-  color: #777;
+#content figure {
+   text-align: center;
+   color: #777;
 }
 
-#content br{
-  display: block;
-  margin-top: 12pt;
-  line-height: 20pt;
-  content: " ";
+#content br {
+   display: block;
+   margin-top: 12pt;
+   line-height: 20pt;
+   content: " ";
 }
 
 #loader {
-  display: block;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(200, 200, 200, 0.7);
-  background-repeat: no-repeat;
-  background-position: center;
+   display: block;
+   position: absolute;
+   text-align: center;
+   top: 0;
+   left: 0;
+   z-index: 100;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(200, 200, 200, 0.7);
+   background-repeat: no-repeat;
+   background-position: center;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    #navbar {padding-top: 15px;}
-    #navbar a {font-size: 18px;}
+   #navbar {
+      padding-top: 15px;
+   }
+
+   #navbar a {
+      font-size: 18px;
+   }
 }

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   var body = document.getElementsByTagName("BODY")[0];
+   var insertion = document.getElementById("content");
 
    var options = new XMLHttpRequest();
    options.open('GET', 'https://cors-anywhere.herokuapp.com/https://eservices.minnstate.edu/registration/search/advancedSubmit.html?campusid=304&searchrcid=0304&searchcampusid=304&yrtr=20193&subject=CSCI&courseNumber=&courseId=&openValue=OPEN_PLUS_WAITLIST&delivery=ALL&showAdvanced=true&mon=on&tue=on&wed=on&thu=on&fri=on&sat=on&sun=on&starttime=0600&endtime=2300&mntransfer=&credittype=ALL&credits=&instructor=&keyword=&begindate=&site=0304&resultNumber=250', false);
@@ -38,5 +38,5 @@ $(document).ready(function() {
    }
    var table = convertTable(diva);
    //   sessionStorage.setItem('user', JSON.stringify(diva));
-   $(body).after(diva);
+   $(insertion).after(diva);
 });
