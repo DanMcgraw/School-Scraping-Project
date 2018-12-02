@@ -9,25 +9,56 @@ roomsArray.push(new Room(3160, 0, 260, 475, true));
 roomsArray.push(new Room(3150, 0, 375, 475, true));
 
 function mapRooms() {
-  var rooms = document.querySelectorAll("div[class^='room_']");
-  var inputBox = document.getElementById('input');
+   generateTable()
+      .then(function(resolve) {
+         var array = stripNonRooms(resolve.a, roomsArray);
+         localStorage.setItem('data', JSON.stringify(array));
+         //hides the loader when it is complete
+         var loader = document.getElementById("loader");
+         if (loader != null)
+            loader.style.display = "none";
 
-  if(rooms.length){
-    //Rooms have been placed, just need to be updated
+         mapRoomsLoaded(array);
+      });
 
-    for(var i = 0; i<rooms.length;i++){
-    if(rooms[i].className.substring(5,9)==inputBox.value)
-    rooms[i].childNodes[0].src = "images/Red_Oval.png";
-    else{
-      rooms[i].childNodes[0].src = "images/Green_Oval.png";
-    }
-  }
-  }else{
-    //rooms need to be placed
-   roomsArray.forEach(function(element) {
-      insertRoom(element);
-   });
- }
+
+}
+
+function mapRoomsLoaded(data) {
+   var rooms = document.querySelectorAll("div[class^='room_']");
+   var inputBox = document.getElementById('input');
+
+   if (rooms.length) {
+      //Rooms have been placed, just need to be updated
+
+      var time = new Time();
+      time.day = "Friday";
+      time.hours = timeEpoch8(timeConverter(inputBox.value));
+      testRoomOverlaps(time, data);
+
+      for (var i = 0; i < rooms.length; i++) {
+         if (roomsArray[i].onOff) {
+            rooms[i].childNodes[0].src = "images/Green_Oval.png";
+         } else {
+            rooms[i].childNodes[0].src = "images/Red_Oval.png";
+
+         }
+      }
+
+      // for (var i = 0; i < rooms.length; i++) {
+      //
+      //    if (rooms[i].className.substring(5, 9) == inputBox.value)
+      //       rooms[i].childNodes[0].src = "images/Red_Oval.png";
+      //    else {
+      //       rooms[i].childNodes[0].src = "images/Green_Oval.png";
+      //    }
+      // }
+   } else {
+      //rooms need to be placed
+      roomsArray.forEach(function(element) {
+         insertRoom(element);
+      });
+   }
 }
 
 function insertRoom(room) {
