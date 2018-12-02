@@ -85,19 +85,23 @@ function generateTable() {
 }
 
 function testRoomOverlaps(time, data) {
-   console.log(data[0]);
+   var times = [1000, 1500, 955, 1150];
+   console.log(times);
+   console.log(overlapTest(times));
+   console.log(time.hours.concat(timeEpoch8(data[0].times)));
+   console.log(overlapTest(time.hours.concat(timeEpoch8(data[0].times))));
    for (var i = 0; i < data.length; i++) {
       for (var j = 0; i < roomsArray.length; i++) {
-         if (overlapTest(time.hours.concat(data[i].times)) && dateContains(data[i].days, time.day))
-            setRoomToOccupied(data[i].room);
+         if (overlapTest(time.hours.concat(timeEpoch8(data[i].times))) && dateContains(data[i].days, time.day))
+            setRoomToOccupied(data[i].room, data[i]);
       }
    }
 }
 
-function setRoomToOccupied(room) {
+function setRoomToOccupied(room, session) {
    for (var i = 0; i < roomsArray.length; i++)
       if (roomsArray[i].number == room) {
-         roomsArray[i].classes++;
+         roomsArray[i].classes.push(session);
          roomsArray[i].onOff = false;
       }
 }
@@ -135,7 +139,7 @@ function timeEpoch8(input) {
 
 function overlapTest(input) {
    //input is array of 4 numbers, event start, event end, class start, class end
-   return (((input[0] < input[2]) && (input[1] < input[2])) || ((input[0] > input[3]) && (input[1] > input[3])));
+   return !((input[1] < input[2]) || (input[0] > input[3]));
 }
 
 function daysOfWeek(input) {
@@ -203,7 +207,7 @@ function showLoader() {
 class Room {
    constructor(number, classes, x, y, onOff) {
       this.number = number;
-      this.classes = classes;
+      this.classes = new Array();
       this.x = x;
       this.y = y;
       this.onOff = onOff;

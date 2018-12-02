@@ -32,7 +32,7 @@ function mapRoomsLoaded(data) {
       //Rooms have been placed, just need to be updated
 
       var time = new Time();
-      time.day = "Friday";
+      time.day = "Monday";
       time.hours = timeEpoch8(timeConverter(inputBox.value));
       testRoomOverlaps(time, data);
 
