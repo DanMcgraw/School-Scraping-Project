@@ -35,7 +35,7 @@ function mapRoomsLoaded(data) {
       time.day = "Monday";
       time.hours = timeEpoch8(timeConverter(inputBox.value));
       testRoomOverlaps(time, data);
-
+      console.log(roomsArray[2].onOff);
       for (var i = 0; i < rooms.length; i++) {
          if (roomsArray[i].onOff) {
             rooms[i].childNodes[0].src = "images/Green_Oval.png";

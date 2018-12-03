@@ -7,13 +7,14 @@ $(document).ready(function() {
     table = generateTable()
 .then(function(resolve)
 {
-    var array = stripNonRooms(resolve.a, roomsArray);
-    localStorage.setItem('data', JSON.stringify(array));
-    //hides the loader when it is complete
-    var loader = document.getElementById("loader");
-    loader.style.display = "none";
+  var array = stripNonRooms(resolve.a, roomsArray);
+  localStorage.setItem('data', JSON.stringify(array));
+  //hides the loader when it is complete
+  var loader = document.getElementById("loader");
+  if (loader != null)
+     loader.style.display = "none";
 
-    return array;
+  mapRoomsLoaded(array);
 })
 
 
