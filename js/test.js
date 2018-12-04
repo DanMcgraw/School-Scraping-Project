@@ -19,12 +19,8 @@ $(document).ready(function() {
 
 
   function testFunction() {
-    output.innerHTML = timeEpoch8(timeConverter(inputBox.value));
-    output.innerHTML += "<br />";
-    output.innerHTML += timeConverter(inputBox.value);
-    output.innerHTML += "<br />";
-    output.innerHTML += daysOfWeek(inputBox.value);
-    output.innerHTML += "<br />";
-    output.innerHTML += JSON.stringify(table[4]);
+    output.innerHTML = "<br />";
+    output.innerHTML += timeEpoch8(timeConverter(inputBox.value))[1];
+
   }
 });
