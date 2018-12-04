@@ -1,8 +1,9 @@
 function rowToNodeSet(row) {
   var length = row.cells[0].getElementsByTagName('div').length;
+  if(row.cells[0].innerHTML.includes("n/a")) length--;
+
   var nodeSet = new Array();
   for (var i = 0; i < length; i++) {
-    if(row.cells[0].innerHTML.includes("n/a")) continue;
     var _daysOfWeek = daysOfWeek(row.cells[0].getElementsByTagName('div')[i].innerHTML);
     var _timeOfDay = timeConverter(row.cells[1].getElementsByTagName('div')[i].innerHTML);
     var _roomNumber = row.cells[2].getElementsByTagName('div')[0].innerHTML;
@@ -133,6 +134,8 @@ function createInfoBox(room) {
   div.className = "infoBox";
   div.innerHTML = "Class conflicts:";
   var list = document.createElement('ol');
+  list.style.listStyleType="none";
+  list.style.padding="0px";
   for(i in room.classes){
     var listItem = document.createElement('li');
     listItem.innerHTML = room.classes[i].title+"<br />"+formatTime(timeEpoch8(room.classes[i].times));

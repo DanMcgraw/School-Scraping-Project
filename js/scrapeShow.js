@@ -14,7 +14,7 @@ $(document).ready(function() {
    $(sevenfifty).find('tr').each(function() {
       var $tds = $(this).children(),
          $row = $("<tr></tr>");
-      $row.append($tds.eq(7)).append($tds.eq(8)).append($tds.eq(13)).appendTo(diva);
+         $row.append($tds.eq(7)).append($tds.eq(8)).append($tds.eq(13)).append($tds.eq(5)).append($tds.eq(11)).appendTo(diva);
    });
    $(diva).find('img').each(function() {
 
@@ -25,11 +25,7 @@ $(document).ready(function() {
    });
    for (i = 0; i < diva.rows.length; i++) {
       var row = diva.rows[i];
-      if (diva.rows[i].cells[0].innerHTML.includes("n/a")) {
-         diva.deleteRow(i);
-         i--;
-         continue;
-      }
+
       $(row).find("div").each(function(element) {
          this.innerHTML = this.innerHTML.trim();
       });
@@ -37,6 +33,6 @@ $(document).ready(function() {
 
    }
    var table = convertTable(diva);
-   //   sessionStorage.setItem('user', JSON.stringify(diva));
+      sessionStorage.setItem('data', JSON.stringify(table));
    $(insertion).after(diva);
 });
