@@ -26,14 +26,16 @@ function mapRooms() {
 
 function mapRoomsLoaded(data) {
    var rooms = document.querySelectorAll("div[class^='room_']");
-   var inputSlider = document.getElementById('input');
+   var value =$('#timeSliderTime').text();
+   var date = $('#timeDatepicker').datepicker('getDate');
+    var dayOfWeek = $.datepicker.formatDate('DD', date);
 
    if (rooms.length) {
       //Rooms have been placed, just need to be updated
 
       var time = new Time();
-      time.day = "Tuesday";
-      time.hours = timeEpoch8(timeConverter(inputSlider.value));
+      time.day = dayOfWeek;
+      time.hours = timeEpoch8(timeConverter(value));
       $("div.infoBox").remove();
 
       testRoomOverlaps(time, data);

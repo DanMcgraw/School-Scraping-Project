@@ -13,9 +13,10 @@
 		<script src="js/map.js"></script>
 		<link rel="stylesheet" href="css/jquery-ui.min.css">
 		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/slider.js"></script>
+		<script src="js/inputs.js"></script>
 		<script>
 			$(document).ready(function() {
+				$( "#timeDatepicker" ).datepicker();
 				mapRooms();
 			});
 		</script>
@@ -23,9 +24,11 @@
 	</head>
 
 	<body>
-		<div id="timeSlider" class="center"></div>
-		<div id="timeSliderTime" class="center"></div>
 		<div class="center">
+			Date: <input type="text" id="timeDatepicker">
+			<div id="timeSlider" class="center" style="width:65%;position:relative;margin:auto;"></div>
+			<div id="timeSliderTime" class="center"></div>
+
 			<div id="highlighted_map" style="position:relative;display: inline-block;">
 				<img src="data/Map.svg" alt="...">
 			</div>
