@@ -26,14 +26,14 @@ function mapRooms() {
 
 function mapRoomsLoaded(data) {
    var rooms = document.querySelectorAll("div[class^='room_']");
-   var inputBox = document.getElementById('input');
+   var inputSlider = document.getElementById('input');
 
    if (rooms.length) {
       //Rooms have been placed, just need to be updated
 
       var time = new Time();
       time.day = "Tuesday";
-      time.hours = timeEpoch8(timeConverter(inputBox.value));
+      time.hours = timeEpoch8(timeConverter(inputSlider.value));
       $("div.infoBox").remove();
 
       testRoomOverlaps(time, data);

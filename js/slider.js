@@ -55,8 +55,11 @@ $(document).ready(function() {
 
       //Display the resulting range start and end time
       //Example = '10:00am-2:00pm'
-	    $('#input').html(hours+':'+minutes+'-'+hours2+':'+minutes2);
-        }
+	    $('#timeSliderTime').html(hours+':'+minutes+'-'+hours2+':'+minutes2);
+    },
+    stop:function(event, ui) {
+      mapRooms();
+    }
     });
 
 });

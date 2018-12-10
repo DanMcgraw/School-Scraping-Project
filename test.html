@@ -4,7 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="title" content="Test" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/script.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/map.js"></script>
@@ -16,6 +19,14 @@
 
   <body>
     test
+    <div id="time-range">
+      <p>Time Range: <span class="slider-time">10:00 AM</span> - <span class="slider-time2">12:00 PM</span>
+
+      </p>
+      <div class="sliders_step1">
+        <div id="slider-range"></div>
+      </div>
+    </div>
     <input type='text' id='input'>
     <div id="output">testing</div>
   </body>
