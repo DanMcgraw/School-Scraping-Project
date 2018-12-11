@@ -129,7 +129,8 @@ function createInfoBox(room) {
   div.style.position = "absolute";
   div.style.top = room.y.toString() + "px";
   div.style.left = room.x.toString() + "px";
-  div.style.transform = "translate(-50%, 0%) scale(0.5)";
+  div.style.transform = "translate(-50%, 30pt) scale(0.5)";
+  div.style.transformOrigin = "top center";
   div.style.textAlign = "center";
   div.className = "infoBox";
   div.innerHTML = "Class conflicts:";

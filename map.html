@@ -16,7 +16,11 @@
 		<script src="js/inputs.js"></script>
 		<script>
 			$(document).ready(function() {
-				$( "#timeDatepicker" ).datepicker();
+				$( "#timeDatepicker" ).datepicker({
+					 onSelect: function(dateText) {
+mapRooms();
+					 }
+				});
 				mapRooms();
 			});
 		</script>
