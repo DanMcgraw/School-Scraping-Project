@@ -242,8 +242,11 @@ function daysOfWeek(input) {
 }
 
 function writeToLoader(string, percent) {
-   var currentlyLoading = document.getElementById("loader").getElementsByTagName("div")[0];
-   $(currentlyLoading).html("Now Scraping " + string + " Classes...<br/>%" + parseInt(percent) + " complete");
+   var currentlyLoading = document.getElementById("loader").getElementsByTagName("div");
+   $(currentlyLoading[0]).html("Now Scraping " + string + " Classes...<br/>%" + parseInt(percent) + " complete");
+   $(currentlyLoading[1]).progressbar({
+      value: parseInt(percent)
+   });
 }
 
 function showLoader() {
